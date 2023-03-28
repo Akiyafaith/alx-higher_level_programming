@@ -3,4 +3,4 @@ class Square:
     """
     A class that represents a square.
     """
-    pass
+    pass # The class doesn't have any properties or methods yet.
