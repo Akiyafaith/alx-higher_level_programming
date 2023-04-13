@@ -5,7 +5,11 @@
 def lookup(obj):
     """returns the list of available attributes and methods of an object"""
     methods = []
+    atts = []
     for att in dir(obj):
         if not att.startswith("__"):
-            methods.append(att)
-    return methods
+            if callable(getattr(obj,att)):
+                methods.append(att)
+        else:
+            atts.append(att)
+    return sorted(atts) + sorted(methods)
