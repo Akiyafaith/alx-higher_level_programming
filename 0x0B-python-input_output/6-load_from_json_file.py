@@ -6,5 +6,6 @@ import json
 
 
 def load_from_json_file(filename):
+    """returns: the Python object created from the JSON file"""
     with open(filename) as fn:
         return json.load(fn)
