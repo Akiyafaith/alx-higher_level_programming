@@ -54,10 +54,7 @@ class Base:
         fn = "{}.json".format(cls.__name__)
         try:
             with open(fn, mode="r", encoding="utf-8") as f:
-                objs_json = cls.from_json_string(f.read())
-                objs = []
-                for obj in objs_json:
-                    objs.append(cls.create(**obj))
-                return objs
+                list_dicts = cls.from_json_string(f.read())
+                return [cls.create(**dict) for dict in list_dicts]
         except FileNotFoundError:
             return []

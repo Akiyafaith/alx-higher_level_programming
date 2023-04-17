@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 import unittest
+import json
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 """define a class containing the test cases"""
 
 
-class TestBase(unittest.Testcase):
+class TestBase(unittest.TestCase):
     def test_id(self):
-        bi = Base()
+        b1 = Base()
         b2 = Base(98)
         b3 = Base()
         b4 = Base(1)
@@ -23,7 +24,7 @@ class TestBase(unittest.Testcase):
 
     def test_json_string(self):
         """test for the json_string method"""
-        bi = Base()
+        b1 = Base()
         b2 = Base(98)
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
@@ -45,9 +46,10 @@ class TestBase(unittest.Testcase):
         Base.save_to_file([b1, b2])
         with open("Base.json", "r") as fn:
             self.assertEqual(
-                fn.read(),
-                '[{"id": 1}, {"id": 98}]'
-            )
+                json.loads(file.read()), [
+                    b1.to_dictionary(),
+                    b2.to_dictionary()
+                ])
 
     def test_load_from_file(self):
         b1 = Base()
