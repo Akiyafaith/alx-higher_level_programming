@@ -23,10 +23,14 @@ class Rectangle(Base):
         for n in range(self.height):
             print(" " * self.x + "#" * self.width)
     """assigns an argument to each attribute"""
-    def update(self, *args):
-        att = ["id", "width", "height", "x", "y"]
-        for n, arg in enumerate(args):
-            setattr(self, att[n], arg)
+    def update(self, *args, **kwargs):
+        if args:
+            att = ["id", "width", "height", "x", "y"]
+            for n, arg in enumerate(args):
+                setattr(self, att[n], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     """get the width of the rectangle"""
     @property
