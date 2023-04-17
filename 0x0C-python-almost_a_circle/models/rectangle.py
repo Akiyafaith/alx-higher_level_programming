@@ -18,9 +18,10 @@ class Rectangle(Base):
         """returns the area value of the Rectangle instance."""
         return self.width * self.height
     def display(self):
+        for n in range(self.y):
+            print()
         for n in range(self.height):
-            print("#" * self.width)
-        print()
+            print(" " * self.x + "#" * self.width)
 
     """get the width of the rectangle"""
     @property
