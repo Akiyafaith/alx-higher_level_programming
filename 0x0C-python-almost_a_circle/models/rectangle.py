@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 from models.base import Base
 """define a class Rectangle that inherits from Base"""
 
@@ -92,3 +93,11 @@ class Rectangle(Base):
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height> representation"""
         return "[Rectangle] ({}) {}/{} - {}/{}". format(self.id, self.x, self.y, self.width, self.height)
+    def save_to_file(cls, list_objs):
+        """a json representation of a file"""
+        if list_objs is None:
+            list_objs = []
+        fn = cls.__name__ + ".json"
+        with open(fn, "w") as f:
+            f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
+
