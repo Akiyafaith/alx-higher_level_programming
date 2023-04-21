@@ -31,8 +31,10 @@ class Rectangle(Base):
         for n in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    """assigns an argument to each attribute"""
+    """define a method"""
     def update(self, *args, **kwargs):
+        """assigns an argumments to each attribute, the
+        attributes are set in an order based on the list"""
         if args:
             att = ["id", "width", "height", "x", "y"]
             for n, arg in enumerate(args):
@@ -41,6 +43,7 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    """define a method dictionary"""
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle:"""
         return {'id': self.id, 'width': self.width,
@@ -52,9 +55,10 @@ class Rectangle(Base):
         """Returns the width of the rectangle"""
         return self.__width
 
-    """set the width of the rectangle"""
+    
     @width.setter
     def width(self, value):
+        """set the width of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -68,9 +72,9 @@ class Rectangle(Base):
         """returns the height of the rectangle"""
         return self.__height
 
-    """set the height of the rectangle"""
     @height.setter
     def height(self, value):
+        """set the height of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("height must be an integerr")
         elif value <= 0:
@@ -78,9 +82,9 @@ class Rectangle(Base):
         else:
             self.__height = value
 
-    """set and get the x values of the rectangle"""
     @property
     def x(self):
+        """set and get the x values of the rectangle"""
         return self.__x
 
     @x.setter
@@ -105,7 +109,8 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
-
+    
+    """define a method"""
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> -
         <width>/<height> representation"""
@@ -113,6 +118,7 @@ class Rectangle(Base):
                 self.id, self.x, self.y, self.width, self.height
             )
 
+    """define a method"""
     def save_to_file(cls, list_objs):
         """a json representation of a file"""
         if list_objs is None:
