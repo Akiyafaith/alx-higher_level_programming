@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""define a module"""
 from models.rectangle import Rectangle
+
 """define a class square that inherits from Rectangle"""
 
 
@@ -8,19 +10,22 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
+    """define an overloading method"""
     def __str__(self):
         """return [Square] (<id>) <x>/<y> - <size> representation"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
+
     @property
     def size(self):
-       """ get the size attributes"""
-       return self.width
+        """ get the size attributes"""
+        return self.width
 
     @size.setter
     def size(self, value):
-       """setter for the size attribute"""
-       self.width = value
-       self.height = value
+        """setter for the size attribute"""
+        self.width = value
+        self.height = value
 
     """public method that assigns attributes"""
     def update(self, *args, **kwargs):
@@ -31,6 +36,8 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    """define a method"""
     def to_dictionary(self):
         """ returns the dictionary representation of a Square"""
         return {
