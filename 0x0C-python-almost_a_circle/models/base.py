@@ -37,7 +37,7 @@ class Base:
                 [obj.to_dictionary() for obj in list_objs]
                 ))
 
-    """define a class method that checks if the string 
+    """define a class method that checks if the string
     is empty"""
     @staticmethod
     def from_json_string(json_string):
@@ -71,4 +71,5 @@ class Base:
     """define a class method"""
     def to_dictionary(self):
         """returns the dictionary representation of the rectangle"""
-        return {"id": self.id, 'width': self.width, 'height': self.height,'x': self.x, 'y': self.y}
+        return {"id": self.id, 'width': self.width, 'height':
+                self.height, 'x': self.x, 'y': self.y}
