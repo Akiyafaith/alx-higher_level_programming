@@ -1,25 +1,31 @@
 #!/usr/bin/python3
-import json
+"""import the Base class from the module.base"""
+
+
 from models.base import Base
+import json
 """define a class Rectangle that inherits from Base"""
 
 
 class Rectangle(Base):
     """initialize a new instance of the class Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """define private instant attributes"""
 
+        """define the private instant attributes"""
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
 
+    """define a method area"""
     def area(self):
         """returns the area value of the Rectangle instance."""
         return self.width * self.height
 
+    """define a method display"""
     def display(self):
+        """it prints in stdout the Rectangle instance with the character #"""
         for n in range(self.y):
             print()
         for n in range(self.height):
