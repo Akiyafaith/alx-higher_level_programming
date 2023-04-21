@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """define a module"""
+
 from models.rectangle import Rectangle
 
 """define a class square that inherits from Rectangle"""
@@ -27,8 +28,9 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    """public method that assigns attributes"""
+    """define a public method"""
     def update(self, *args, **kwargs):
+        """that assigns attributes"""
         if args:
             att = ["id", "size", "x", "y"]
             for n in range(len(args)):
