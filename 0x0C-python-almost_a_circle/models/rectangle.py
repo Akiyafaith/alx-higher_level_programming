@@ -55,7 +55,6 @@ class Rectangle(Base):
         """Returns the width of the rectangle"""
         return self.__width
 
-    
     @width.setter
     def width(self, value):
         """set the width of the rectangle"""
@@ -109,7 +108,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
-    
+
     """define a method"""
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> -
