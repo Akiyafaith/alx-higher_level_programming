@@ -18,7 +18,6 @@ class Base:
             self.id = Base.__nb_objects
 
     """define a class method that takes the list of dictionaries"""
-    @classmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
