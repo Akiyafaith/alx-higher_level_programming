@@ -26,7 +26,6 @@ class Base:
 
     """define a class method that writes the JSON string
     representation of list_objs to a file"""
-    @classmethod
     def save_to_file(cls, list_objs):
         if list_objs is None:
             list_objs = []
