@@ -15,7 +15,7 @@ class Rectangle:
     """retrieves the width"""
     def width(self):
         """returns: the width"""
-        return self.__width
+        return self._width
     """set the width"""
     def width(self, value):
         """TypeError: if the value is not an integer"""
@@ -29,7 +29,7 @@ class Rectangle:
     """property that retrives height"""
     def height(self):
         """return:the height"""
-        return self.__height
+        return self._height
     """set the height"""
     def height(self, value):
         """TypeError: height is not an integer"""
@@ -39,4 +39,4 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         else:
-            self.__height = value
+            self._height = value
