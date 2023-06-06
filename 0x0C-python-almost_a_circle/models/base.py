@@ -74,3 +74,5 @@ class Base:
         """returns the dictionary representation of the rectangle"""
         return {"id": self.id, 'width': self.width, 'height':
                 self.height, 'x': self.x, 'y': self.y}
+
+
