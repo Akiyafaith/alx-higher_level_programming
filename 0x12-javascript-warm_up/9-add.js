@@ -11,5 +11,5 @@ if (!isNaN(num1) && !isNaN(num2)) {
   const rslt = add(num1, num2);
   console.log(rslt);
 } else {
-  console.log('Invalid input. Please provide two valid integers.');
+  console.log('NaN');
 }
