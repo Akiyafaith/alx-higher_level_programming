@@ -5,10 +5,11 @@ found in the header of the response"""
 import urllib.request
 import sys
 
-if ___name__ == "__main__":
+if __name__ == "__main__":
     # fetch the url
     url = sys.argv[1]
-
+    
+    req = urllib.request.Request(url)
     with urllib.request.urlopen(url) as response:
         headers = response.headers
 
