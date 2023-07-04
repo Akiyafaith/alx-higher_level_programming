@@ -5,7 +5,7 @@ found in the header of the response"""
 import urllib.request
 import sys
 
-if ___name__ = "__main__":
+if ___name__ == "__main__":
     # fetch the url
     url = sys.argv[1]
 
