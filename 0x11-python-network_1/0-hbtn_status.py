@@ -1,6 +1,6 @@
 """the script fetches https://alx-intranet.hbtn.io/status"""
 
-#!/usr/bin/python3
+# !/usr/bin/python3
 # fetch a URL
 
 import urllib.request
