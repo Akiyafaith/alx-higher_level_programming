@@ -7,11 +7,8 @@ import sys
 
 if __name__ == "__main__":
     # fetch the url
-    url = sys.argv[1]
+    URL = sys.argv[1]
     
-    req = urllib.request.Request(url)
     with urllib.request.urlopen(url) as response:
-        headers = response.headers
-
-    request_id = headers.get('X-Request-Id')
-    print(request_id)
+        header = response.getheader('X-Request-Id')
+    print(header)
