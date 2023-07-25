@@ -17,6 +17,6 @@ request.get(url + id, function (error, response, body) {
       }
       const character = JSON.parse(characterData);
       console.log(character.name);
-  });
+    });
   }
 }); 
